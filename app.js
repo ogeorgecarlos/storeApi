@@ -5,6 +5,7 @@ import "./src/database/index"
 import homeRouter from "./src/routes/homeRoutes"
 import produtoRoutes from "./src/routes/produtoRoutes"
 import fornecedorRoutes from "./src/routes/fornecedorRoutes"
+import categoryRoutes from './src/routes/categoryRoutes';
 
 class App{
   constructor(){
@@ -14,9 +15,10 @@ class App{
   }
 
   routes(){
-    this.app.use("/",homeRouter)
-    this.app.use("/", produtoRoutes)
-    this.app.use("/", fornecedorRoutes)
+    this.app.use("/home",homeRouter)
+    this.app.use("/produtos", produtoRoutes)
+    this.app.use("/fornecedor", fornecedorRoutes)
+    this.app.use("/category", categoryRoutes)
   }
 
   middlewares(){

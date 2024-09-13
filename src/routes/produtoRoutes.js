@@ -4,6 +4,10 @@ import produtoController from "../controllers/produtosController"
 
 const router = Router()
 
-router.get("/all", produtoController.index)
+router.get("/", produtoController.index)
+//get show
+//post store
+//put update
+//delete
 
 export default router
