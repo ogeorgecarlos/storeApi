@@ -8,6 +8,6 @@ router.get("/", produtoController.index)
 //get show
 //post store
 //put update
-//delete
+//deletegemini
 
 export default router
