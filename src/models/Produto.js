@@ -6,12 +6,16 @@ export default class Produto extends Model{
       {
         id:{
           type: Sequelize.INTEGER,
-          primaryKey: true,
+          primaryKey: false,
           autoIncrement: true,
           allowNull: false
-
         },
-        nome:{
+        ean:{
+          type: Sequelize.INTEGER,
+          allowNull: false,
+          primaryKey: true,
+        },
+        name:{
           type: Sequelize.STRING,
           allowNull: false,
         },
