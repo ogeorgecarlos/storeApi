@@ -1,1 +1,2 @@
 SaleModel: entender e resolver o probelma de criar uma venda com varios produtos;
+productModel: Estudar opcao de trocar datatype de price para "numeric" ou "double";
