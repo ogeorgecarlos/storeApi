@@ -4,10 +4,17 @@ export default class Fornecedor extends Model{
   static init(sequelize){
     super.init(
       {
+        id:{
+          type: Sequelize.INTEGER,
+          unique: true,
+          autoIncrement: true,
+          require: true
+        },
         nome:{
           type: Sequelize.STRING,
           allowNull: false,
-          primaryKey:true
+          primaryKey:true,
+          require: true,
         },
         phone:{
           type: Sequelize.INTEGER,

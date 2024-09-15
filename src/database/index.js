@@ -4,7 +4,7 @@ import configDataBase from "../config/database"
 
 import Produto from "../models/Produto"
 import Categoria from "../models/Categoria"
-import Fornecedor from '../models/Fornecedor';
+import Fornecedor from '../models/supplier';
 
 
 //modelo para criacao de novas instancias banco de dados.
