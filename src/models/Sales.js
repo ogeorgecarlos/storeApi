@@ -14,7 +14,23 @@ export default class Sale extends Model{
         type: DataTypes.ARRAY,
         allowNull: false,
         require: true
-      }
+      },
+      saleType:{
+        type: DataType.STRING,
+        allowNull: false,
+        require: true,
+        Comment: "aceppt two values `NV` and `VR`",
+        //validate
+      },
+      paymentWay:{
+        type: DataTypes.STRING,
+        allowNull: false,
+        require: true,
+        comment: "Must enter with payments way",
+        //validate
+      },
+
+      //descontos? por produto?
     },
     {
       sequelize,
