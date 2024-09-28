@@ -33,6 +33,8 @@ const models = [Produto, Categoria, Fornecedor]
 models.forEach(model=> model.init(connection.sequelize));
 
 //loggin models
+console.log(connection.sequelize.models)
+connection.sequelize.sync()
 //console.log(connection.sequelize.models)
 
 export default connection.sequelize

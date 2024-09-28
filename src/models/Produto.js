@@ -1,4 +1,4 @@
-import Sequelize, {Model} from "sequelize";
+import Sequelize, {Model, Op} from "sequelize";
 
 export default class Produto extends Model{
   static init(sequelize){
@@ -6,18 +6,27 @@ export default class Produto extends Model{
       {
         id:{
           type: Sequelize.INTEGER,
-          primaryKey: false,
+          primaryKey: true,
           autoIncrement: true,
-          allowNull: false
+          allowNull: false,
+          comment: "Product id to the Store"
         },
         ean:{
           type: Sequelize.INTEGER,
           allowNull: false,
-          primaryKey: true,
+          unique: true,
+          comment: "Barcode product",
+          validate:{
+            //args:
+            //msg:
+          },
         },
         name:{
           type: Sequelize.STRING,
           allowNull: false,
+          validate:{
+            len:[[Op.gte]:3]
+          }
         },
         price:{
           type: Sequelize.FLOAT,
