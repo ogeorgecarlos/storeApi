@@ -1,4 +1,4 @@
-import Sequelize, {Model} from "sequelize"
+import Sequelize, {Model,Op} from "sequelize"
 
 export default class Fornecedor extends Model{
   static init(sequelize){
@@ -6,28 +6,62 @@ export default class Fornecedor extends Model{
       {
         id:{
           type: Sequelize.INTEGER,
-          unique: true,
           autoIncrement: true,
-          require: true
+          primaryKey: true,
         },
-        nome:{
+
+        name:{
           type: Sequelize.STRING,
           allowNull: false,
-          primaryKey:true,
           require: true,
+          validate:{
+            len:[[Op.gte]: 3],
+            msg: "Is mandatory enter the supplier name"
+          }
         },
-        phone:{
+
+        PrincipalPhoneNumber:{
           type: Sequelize.INTEGER,
           allowNull: false,
+          require: true,
+          validate:{
+            is: {
+            args: /(9[1236][0-9]) ?([0-9]{3}) ?([0-9]{3})/,
+            msg: "The phone number is not Valid"
+            },
+            notNull:{
+              args: true,
+              msg: "The principal phone number must to be informed"
+            }
+          }
         },
+
+        phoneNumber:{
+          type: Sequelize.INTEGER,
+          validate:{
+            is: {
+              args: /(9[1236][0-9]) ?([0-9]{3}) ?([0-9]{3})/,
+              msg: "The phone number is not Valid"
+            },
+          }
+        },
+
         email:{
           type: Sequelize.STRING,
-          allowNull: false
+          allowNull: false,
+          require: true, //mas se  o allowNull já é false, o require não é implicitamente true?
+          validate:{
+            isEmail: true,
+            msg: "Enter a correct email"
+          }
         }
       },
+
       {
         sequelize,
-        tableName: "Categoria"
+        tableName: "Supplier",
+        underscored: true,
+        paranoid: true,
       }
 
     )

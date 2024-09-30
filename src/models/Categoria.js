@@ -7,12 +7,12 @@ export default class Categoria extends Model{
         id:{
           type: Sequelize.INTEGER,
           autoIncrement: true,
+          primaryKey: true,
           allowNull: false
         },
         nome:{
           type: Sequelize.STRING,
           allowNull: false,
-          primaryKey: true
         },
       },
       {
