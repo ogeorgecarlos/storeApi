@@ -34,7 +34,7 @@ models.forEach(model=> model.init(connection.sequelize));
 
 //loggin models
 console.log(connection.sequelize.models)
-connection.sequelize.sync()
+connection.sequelize.sync({force: true})
 //console.log(connection.sequelize.models)
 
 export default connection.sequelize
