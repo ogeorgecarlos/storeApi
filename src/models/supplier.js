@@ -1,7 +1,7 @@
 import Sequelize, {Model,Op} from "sequelize"
 
-export default class Fornecedor extends Model{
-  static init(sequelize){
+export default class Supplier extends Model{
+  static init(sequelize, product){
     super.init(
       {
         id:{
@@ -54,7 +54,7 @@ export default class Fornecedor extends Model{
             isEmail: true,
             msg: "Enter a correct email"
           }
-        }
+        },
       },
 
       {
@@ -62,7 +62,7 @@ export default class Fornecedor extends Model{
         tableName: "Supplier",
         underscored: true,
         paranoid: true,
-      }
+      },
 
     )
   }
