@@ -36,8 +36,16 @@ models.forEach(model=> model.init(connection.sequelize));
 
 
 //relations
-Supplier.belongsToMany(Produto, configProductSupplier.supplier);
-Produto.belongsToMany(Supplier, configProductSupplier.product)
+Supplier.hasMany(Produto,{
+  foreignKey:{
+    name: "testeKey",
+    allowNull: true,
+  },
+  onDelete: "CASCADE",//<- Its doesnt a attribute config, but a association config,
+  onUpdate: "CASCADE",
+});
+
+Produto.belongsTo(Supplier)
 
 //loggin models
 connection.sequelize.sync({force: true});
