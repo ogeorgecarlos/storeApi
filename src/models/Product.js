@@ -1,6 +1,6 @@
 import Sequelize, {Model, Op} from "sequelize";
 
-export default class Produto extends Model{
+export default class Product extends Model{
   static init(sequelize){
     super.init(
       {
@@ -56,11 +56,15 @@ export default class Produto extends Model{
       },
       {
         sequelize,
-        tableName: "Produto",
+        tableName: "Product",
         paranoid: true,
         underscored: true,
       },
     );
-    //return this;
+    return this;
+  }
+
+  static associate(models){
+    this.belongsTo(models.Supplier)
   }
 }

@@ -2,7 +2,7 @@ import Sequelize from "sequelize";
 
 import configDataBase from "../config/database"
 
-import Produto from "../models/Produto"
+import Product from "../models/Product"
 import Categoria from "../models/Categoria"
 import Supplier from '../models/supplier';
 
@@ -29,23 +29,13 @@ class newConnection{
 const connection = new newConnection(configDataBase);
 
 //models to init
-const models = [Produto, Categoria, Supplier]
+const models = [Supplier, Product]
 
 //Initializing models
 models.forEach(model=> model.init(connection.sequelize));
 
-
 //relations
-Supplier.hasMany(Produto,{
-  foreignKey:{
-    name: "testeKey",
-    allowNull: true,
-  },
-  onDelete: "CASCADE",//<- Its doesnt a attribute config, but a association config,
-  onUpdate: "CASCADE",
-});
-
-Produto.belongsTo(Supplier)
+models.forEach(model => model.associate && model.associate(connection.sequelize.models));
 
 //loggin models
 connection.sequelize.sync({force: true});

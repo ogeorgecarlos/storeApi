@@ -63,7 +63,11 @@ export default class Supplier extends Model{
         underscored: true,
         paranoid: true,
       },
-
     )
+    return this
+  }
+
+  static associate(models){
+    this.hasMany(models.Product);
   }
 }
