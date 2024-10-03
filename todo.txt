@@ -1,30 +1,32 @@
-****SalesModel: 
+****SalesModel****
 entender e resolver o probelma de criar uma venda com varios produtos;
 
 
-****Descontos?
+****Descontos?****
 criar tabela para categorizar descontos?
 
 
-****produtos
+****produtos****
 
-Incluir atributos que podem ou nao existir para o produto:
-Altura:
-largura:
-Profundidade:
-Peso:
-Cor1:
-Cor2:
-Demais cores:
+*Incluir atributos que podem ou nao existir para o produto:
 
-os campos de peso e etc, aceitam null por ter a opcao de haver servicos envolvidos,
+*Altura: ok****
+*largura: ok ****
+*Profundidade:
+*Peso: ok****
+*Cor1:
+*Cor2:
+*Demais cores:
+
+*incluir hooks de validacao on model-level
+
+*os campos de peso e etc, aceitam null por ter a opcao de haver servicos envolvidos,
 entao, na validacao do modelo, exigir esse cmapos caso seja definido como prod e nao servicos.
 
-Pegada carbono:
-... etc
+*Pegada carbono:
 
-Estudar opcao de trocar datatype de price para "numeric" ou "double";
+*Estudar opcao de trocar datatype de price para "numeric" ou "double";
 
+****user model****
 
-****user model
-planejar e criar
+*planejar e criar

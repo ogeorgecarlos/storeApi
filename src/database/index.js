@@ -3,7 +3,6 @@ import Sequelize from "sequelize";
 import configDataBase from "../config/database"
 
 import Product from "../models/Product"
-import Categoria from "../models/Categoria"
 import Supplier from '../models/supplier';
 
 import configProductSupplier from "../config/associationsdb/Product_Supllier"
