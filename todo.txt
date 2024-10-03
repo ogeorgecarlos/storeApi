@@ -1,4 +1,30 @@
-SaleModel: entender e resolver o probelma de criar uma venda com varios produtos;
-productModel: Estudar opcao de trocar datatype de price para "numeric" ou "double";
+****SalesModel: 
+entender e resolver o probelma de criar uma venda com varios produtos;
+
+
+****Descontos?
 criar tabela para categorizar descontos?
-criar user model
+
+
+****produtos
+
+Incluir atributos que podem ou nao existir para o produto:
+Altura:
+largura:
+Profundidade:
+Peso:
+Cor1:
+Cor2:
+Demais cores:
+
+os campos de peso e etc, aceitam null por ter a opcao de haver servicos envolvidos,
+entao, na validacao do modelo, exigir esse cmapos caso seja definido como prod e nao servicos.
+
+Pegada carbono:
+... etc
+
+Estudar opcao de trocar datatype de price para "numeric" ou "double";
+
+
+****user model
+planejar e criar
